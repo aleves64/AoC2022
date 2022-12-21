@@ -34,7 +34,6 @@ y = 0
 total = 0
 while y < abyss:
     x, y = source
-    blocked = False
     while y < abyss:
         if not (x,y+1) in blocks:
             y = y + 1

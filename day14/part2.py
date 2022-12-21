@@ -1,4 +1,5 @@
 import os
+from collections import deque
 
 with open("input", "r") as infile:
     myinput = infile.read()
@@ -29,15 +30,15 @@ for path in paths:
             blocks.add((start_x,y))
         if end_y > abyss:
             abyss = end_y
-floor = abyss + 2
+floor = abyss + 1
 
 total = 0
-y  = -1
+stack = deque([source])
 
-while y != 0:
-    x, y = source
-    blocked = False
-    while y+1 < floor:
+while stack:
+    x, y = stack.popleft()
+    while y < floor:
+        stack.appendleft((x,y))
         if not (x,y+1) in blocks:
             y = y + 1
         elif not (x-1,y+1) in blocks:
@@ -47,6 +48,7 @@ while y != 0:
             x = x + 1
             y = y + 1
         else:
+            stack.popleft()
             break
     blocks.add((x,y))
     total += 1

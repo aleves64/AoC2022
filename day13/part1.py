@@ -12,8 +12,6 @@ def compare(left, right):
         return compare([left], right)
     if isinstance(right, int):
         return compare(left, [right])
-    print(left)
-    print(right)
     for i in range(min(len(left), len(right))):
         comp = compare(left[i],right[i])
         if comp < 0:
