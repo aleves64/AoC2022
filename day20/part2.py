@@ -1,6 +1,5 @@
 import os
 from collections import deque
-from math import copysign
 
 with open("input", "r") as infile:
     myinput = infile.read()

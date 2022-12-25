@@ -119,7 +119,7 @@ for i in range(0, end):
         if seq_len > 2**len(shapes):
             seq = sliced[:seq_len]
             break
-to_seq_start = seq_len -  (len(jets)*len(shapes) % seq_len)
+to_seq_start = seq_len - (len(jets)*len(shapes) % seq_len)
 for j in range(i+1,i+1+to_seq_start):
     shape = shapes[j%5]
     x,y = drop_shape(shape, max_y)

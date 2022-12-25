@@ -1,6 +1,4 @@
 import os
-from collections import deque
-from math import copysign
 import operator
 
 with open("input", "r") as infile:
